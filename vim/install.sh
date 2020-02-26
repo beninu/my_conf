@@ -24,3 +24,7 @@ curl -o ${VIM}/autoload/plug.vim https://raw.githubusercontent.com/beninu/my_con
 
 
 curl -o ${VIM}/ww/c.vim https://raw.githubusercontent.com/beninu/my_conf/master/vim/vim/ww/c.vim
+curl -o ${VIM}/ww/py.vim https://raw.githubusercontent.com/beninu/my_conf/master/vim/vim/ww/py.vim
+curl -o ${VIM}/ww/sh.vim https://raw.githubusercontent.com/beninu/my_conf/master/vim/vim/ww/sh.vim
+curl -o ${VIM}/ww/log.vim https://raw.githubusercontent.com/beninu/my_conf/master/vim/vim/ww/log.vim
+curl -o ${VIM}/ww/java.vim https://raw.githubusercontent.com/beninu/my_conf/master/vim/vim/ww/java.vim
