@@ -1,0 +1,352 @@
+set nocompatible
+set history=2000
+
+set guifont=Monaco:h12
+
+""" ===> Language
+"" Menu 菜单
+" set gvim menu is English
+set langmenu=en_US
+
+
+"" Message
+" set gvim message in English
+language message en_US.UTF-8
+""" <=== end of Language
+
+"let mapleader = ","
+"let g:mapleader = ","
+"let maplocalleader = ","
+"let g:maplocalleader = ","
+
+
+""" ===> Encoding
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,chinese,big5,euc-jp,euc-kr,latin1
+
+if has("win32")
+"set fileencoding=chinese
+set fileencoding=utf-8
+else
+set fileencoding=utf-8
+endif
+""" <=== end of Encoding
+
+if has("win32")
+set clipboard=unnamed
+endif
+
+set clipboard+=unnamed
+"if has("mouse")
+"  set mouse=a
+"endif
+""" directory 
+"把.swp文件放到另外的地方
+"set directory=d:\tmp\vim
+"set nobackup
+
+" plugin
+call plug#begin('~/.vim/plugged')
+
+Plug 'mileszs/ack.vim'
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+Plug 'scrooloose/nerdcommenter'
+
+
+Plug 'scrooloose/nerdtree'
+let NERDTreeWinPos = 1
+nnoremap <silent> <leader><tab> :NERDTreeToggle<CR>
+nnoremap <silent> <leader>1 :NERDTreeToggle<CR>
+
+"Plug 'majutsushi/tagbar'
+"nnoremap <silent> <leader>2 :TagbarToggle<CR>
+"let g:tagbar_left = 1
+"let g:tagbar_width = 33
+"let g:tagbar_autoshowtag = 1
+"let tags = "./tags"
+
+
+
+"Plug 'dense-analysis/ale'
+
+"let g:ale_set_quickfix = 1
+"let g:ale_open_list = 0
+"let g:ale_linters = {
+"\ 'python':['pylint'],
+"\ 'javascript':['eslint'],
+"\ 'java':[],
+"\ 'go': ['gofmt', 'golint']
+"\ }
+"let g:ale_fixers = {
+"\ '*': ['remove_trailing_lines', 'trim_whitespace'],
+"\ 'python': ['autopep8'],
+"\ 'go': ['gofmt']
+"\ }
+"let g:ale_echo_msg_error_str = 'E'
+"let g:ale_echo_msg_warning_str = 'W'
+"let g:ale_echo_msg_format = '[%code%] %s [%severity%]'
+"let g:ale_lint_on_enter = 1
+"nmap <silent> <space>j <Plug>(ale_next_wrap)
+"nmap <silent> <space>k <Plug>(ale_previous_wrap)
+
+
+"Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger = "<tab>"
+"let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+"let g:UltiSnipsListSnippets="<leader><enter>"
+"let g:UltiSnipsEditSplit="vertical"
+"nnoremap <F2> :UltiSnipsEdit<CR>
+
+
+Plug 'NLKNguyen/papercolor-theme'
+
+"Plug 'ervandew/supertab'
+
+"Plug 'vim-scripts/tComment'
+
+Plug 'bling/vim-airline'
+set laststatus=2 " show statusline all time
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#fnamemod = ':t' " only show buffer name
+let g:airline_theme = "dark"
+
+"Plug 'terryma/vim-multiple-cursors'
+"let g:multi_cursor_exit_from_insert_mode = 0
+"let g:multi_cursor_exit_from_visual_mode = 0
+
+Plug 'junegunn/vim-easy-align'
+" 对齐
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+
+"if has('nvim')
+  "" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"else
+  "" Plug 'Shougo/deoplete.nvim'
+  "" Plug 'roxma/nvim-yarp'
+  "" Plug 'roxma/vim-hug-neovim-rpc'
+"endif
+"let g:deoplete#enable_at_startup = 1
+
+"" Plug 'deoplete-plugins/deoplete-clang'
+
+"" Plug 'deoplete-plugins/deoplete-jedi'
+"" let g:deoplete#sources#jedi#server_timeout = 5
+"" let g:deoplete#sources#jedi#show_docstring = 1
+"" let g:deoplete#enable_at_startup = 1
+"" let g:deoplete#enable_smart_case = 1
+"" inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+"" inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
+"" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+
+"" function! s:my_cr_function() abort
+  "" return deoplete#close_popup() . "\<CR>"
+"" endfunction
+
+"let g:jedi#completions_enabled = 0
+"let g:jedi#auto_vim_configuration = 0
+"let g:jedi#smart_auto_mappings = 0
+"let g:jedi#show_call_signatures = 0
+"let g:jedi#goto_assignments_command = ''  " dynamically done for ft=python.
+"let g:jedi#goto_definitions_command = ''  " dynamically done for ft=python.
+"let g:jedi#use_tabs_not_buffers = 0  " current default is 1.
+"let g:jedi#rename_command = '<Leader>gR'
+"let g:jedi#usages_command = '<Leader>gu'
+"Plug 'davidhalter/jedi-vim'
+
+
+"Plug 'Shougo/unite.vim'
+"Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+"Plug 'Shougo/neoyank.vim'
+"Plug 'Shougo/unite-outline'
+
+"Plug 'jeetsukumaran/vim-pythonsense'
+
+call plug#end()
+
+syntax enable
+
+
+
+if has('gui_running')
+    if has("mac")
+      colorscheme macvim
+    endif
+    set background=light
+else
+    colorscheme desert
+    set background=dark
+endif
+" colorscheme solarized
+colorscheme darkblue
+set background=dark
+colorscheme PaperColor
+
+filetype on
+filetype plugin indent on
+
+""" copy global search result to new window
+nnoremap <silent> <F3> :redir @a<CR>:g//<CR>:redir END<CR>:new<CR>:put! a<CR>
+
+
+autocmd BufRead,BufNew *.moin set ft=moin
+
+let g:DropboxPath="F:\\Dropbox"
+let g:VimRC=DropboxPath . "\\AppConf\\vim\_winxp_vimrc"
+let g:LogPath=DropboxPath . "\\log"
+
+
+
+"""TAB
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+set smarttab
+set expandtab
+
+"""Format
+set textwidth=78
+set nowrap
+
+"""Search
+set incsearch
+set hlsearch
+"set nohlsearch
+""" for gf
+set path=.,include,src,src/cpp,unittest/src,/usr/include,/usr/local/include,$HOME/soft/,$HOME/Dropbox/log/**/
+let g:vim_markdown_folding_disabled = 1
+set path+=gens
+set path+=.
+
+
+" third-party/gtest-170/include/gtest/gtest_pred_impl.h:77:52: note: in " definition of macro 'GTEST_ASSERT_'
+" In file included from third-party/gtest-170/include/gtest/gtest.h:1929:0
+" set
+set efm=%-GIn\ file\ included\ from\ %f:%l:%c
+set efm+=\%f:%l:%c:\ %m
+
+
+
+""" display
+set laststatus=2 "alway dispaly status line
+set ruler  "show the cursor postion all the time
+set number "don't show the line nubmer
+" 在statusline上显示当前文件编码
+if has("statusline")
+ set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
+endif
+""" display
+set laststatus=2 "alway dispaly status line
+set statusline=
+set statusline +=[%n,             "buffer number
+set statusline +=%{&ff},           "file format
+set statusline +=%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline +=%Y]                "file type
+set statusline +=\ %<%F            "full path
+set statusline +=%m                "modified flag
+set statusline +=%=%5l             "current line
+set statusline +=/%L               "total lines
+set statusline +=%4v\              "virtual column number
+set statusline +=0x%04B\           "character under cursor
+
+set list
+set listchars=tab:>-,trail:-
+
+
+""" 设置光标线的颜色
+hi CursorLine   cterm=NONE ctermbg=Grey ctermfg=Black guibg=lightblue guifg=black
+hi CursorColumn cterm=NONE ctermbg=Grey ctermfg=Black guibg=darkred guifg=white
+" 当前窗口显示光标线                                                                                                                                                                         
+"#au BufLeave * set nocursorline nocursorcolumn
+"#au BufEnter * set cursorline nocursorcolumn
+
+
+
+""" Edit
+"   http://www.vim.org/tips/tip.php?tip_id=2
+"   Edit another file in the same directory as the current file
+"   uses expression to extract path from current file's path
+"  (thanks Douglas Potts)
+if has("unix")
+  map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
+  map ,w :w <C-R>=expand("%:p:h") . "/" <CR>
+else
+  map ,e :e <C-R>=expand("%:p:h") . "\\" <CR>
+  map ,w :w <C-R>=expand("%:p:h") . "\\" <CR>
+endif  
+
+""" vimrc
+" 写.vimrc之后，自动source
+augroup myvimrchooks
+    au!
+    autocmd bufwritepost _vimrc source  VimRC
+augroup END
+
+""" Key Mapping for
+map <silent> <F11> :edit D:\\Personals\\MyDoc\\My Dropbox\\AppConf\\vim\\_vimrc<CR>
+map <silent> XX :qa!<CR>
+map <silent> ZZ :wqa!<CR>
+""save
+map <silent> SS :wa<CR> 
+map <silent> SSS :wa<CR><C-Z>
+nmap <silent> <S-Insert> "+gP
+
+map <C-h>   <C-w><Left>
+map <C-l>   <C-w><Right>
+map <C-k>   <C-w><Up>
+map <C-j>   <C-w><Down>
+
+map \e :Ex<CR>
+
+""" http://vim.wikia.com/wiki/Auto_copy_the_mouse_selection
+" Method 1 (for Xwindows and mswindows), this map is different from the one shown in vim documentation:
+:noremap <LeftRelease> "+y<LeftRelease>
+
+""" end 切换header和source
+
+""" 搜索相关
+""" 搜索
+"nmap <F2> :call GetSearchString()<CR>:exe "vimgrep /" . SearchString . "/ " .  LogPath . "\**\*"<CR>
+"function! GetSearchString()
+  "call inputsave()
+  "let g:SearchString = input("enter search pattern: ")
+  "call inputrestore()
+"endfunction
+""" 下一个
+nmap <silent> <C-h> :Ack <cword><CR>
+
+nmap <silent> <C-j> :cn<CR>
+nmap <silent> <C-k> :cp<CR>
+
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin"
+    " Do Mac stuff here
+    nmap <M-T> :call TodayLog()<CR>:execute "e " . g:today_file<CR><CR>
+    nmap <M-N> :call NextFile()<CR>:execute "e " . g:next_file<CR><CR>
+    nmap <M-P> :call PrevFile()<CR>:execute "e " . g:prev_file<CR><CR>
+  else
+    nmap <C-S-T> :call TodayLog()<CR>:execute "e " . g:today_file<CR><CR>
+    nmap <C-S-N> :call NextFile()<CR>:execute "e " . g:next_file<CR><CR>
+    nmap <C-S-P> :call PrevFile()<CR>:execute "e " . g:prev_file<CR><CR>
+  endif
+endif
+
+" conn_mgr/src/conn_mgr/worker.h:0:  No "#pragma once" header guard found  [build/header_guard] [5]
+" cpplint
+" errorformat = '%A%f:%l:  %m [%t],%-G%.%#'
+source ~/.vim/ww/c.vim
+source ~/.vim/ww/py.vim
+source ~/.vim/ww/sh.vim
+source ~/.vim/ww/log.vim
+source ~/.vim/ww/java.vim
