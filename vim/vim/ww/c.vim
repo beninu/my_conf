@@ -7,13 +7,13 @@ set expandtab
 
 autocmd BufNewFile *.c,*.cpp,*.cxx,*.cc,*.C
   \ call setline(1, '/*') |
-  \ call setline(2, ' * Copyright (c) 2014, KuaiShou Inc.') |
+  \ call setline(2, ' * Copyright (c) ' . strftime('%Y') . ', ' . WW_META_CORP) |
   \ call setline(3, ' * All rights reserved.') |
   \ call setline(4, ' *') |
   \ call setline(5, ' * @file ' . expand("%:t")) |
   \ call setline(6, ' * @brief')  |
   \ call setline(7, ' *') |
-  \ call setline(8, ' * @author ' . email)|
+  \ call setline(8, ' * @author ' . WW_META_EMAIL)|
   \ call setline(9, ' * @date ' . strftime('%Y-%m-%d')) |
   \ call setline(10, ' */') |
   \ call setline(11, '') |
@@ -23,13 +23,13 @@ autocmd BufNewFile *.h,*.hpp,*.xh,*.hh,*.hxx
   \ let  guard = substitute(expand("%"), "[/.]", "_", "g")  |
   \ let  guard = toupper(guard)  |
   \ call setline(1, '/*') |
-  \ call setline(2, ' * Copyright (c) 2014, KuaiShou Inc.') |
+  \ call setline(2, ' * Copyright (c) 2014, ' . WW_META_CORP ) |
   \ call setline(3, ' * All rights reserved.') |
   \ call setline(4, ' *') |
   \ call setline(5, ' * @file ' . expand("%:t")) |
   \ call setline(6, ' * @brief')  |
   \ call setline(7, ' *') |
-  \ call setline(8, ' * @author ' . email) |
+  \ call setline(8, ' * @author ' . WW_META_EMAIL) |
   \ call setline(9, ' * @date ' . strftime('%Y-%m-%d')) |
   \ call setline(10, ' */') |
   \ call setline(11, '') |

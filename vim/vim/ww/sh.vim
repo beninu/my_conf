@@ -5,7 +5,7 @@ autocmd BufNewFile *.sh
   \ call setline(1, '#!/bin/bash') |
   \ call setline(2, '#' ) |
   \ call setline(3, '#') |
-  \ call setline(4, '# Author : ' . email) |
+  \ call setline(4, '# Author : ' . WW_META_EMAIL) |
   \ call setline(5, '# Created: ' . strftime('%Y %b %d %a %X %Z')) |
   \ call setline(6, '') |
   \ call setline(7, '') |

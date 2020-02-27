@@ -11,7 +11,7 @@ autocmd BufNewFile *.py
   \ call setline(1, '#!/usr/bin/env python') |
   \ call setline(2, '# coding=utf-8' ) |
   \ call setline(3, '#') |
-  \ call setline(4, '# Author : ' . email) |
+  \ call setline(4, '# Author : ' . WW_META_EMAIL) |
   \ call setline(5, '# Created: ' . strftime('%Y %b %d %a %X %Z')) |
   \ call setline(6, '') |
   \ call setline(7, '') |
