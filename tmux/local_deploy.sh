@@ -2,18 +2,29 @@
 
 set -x 
 
-TMUX_VERSION=$(tmux -V | sed -En "s/^tmux ([0-9]+(.[0-9]+)?).*/\1/p")
 
-TMUX_CONF=${PWD}/tmux.conf
-if [[ $(bc <<< "$TMUX_VERSION >= 2.9") -eq 1 ]];
+TMUX_CONF=${HOME}/.tmux.conf
+NOW=$(date +%Y.%m%d.%H%M)
+
+# backup
+if [ -f ${TMUX_CONF} ];
 then
-TMUX_CONF=${PWD}/tmux.conf.ge29
+  mv  ${TMUX_CONF} ${TMUX_CONF}.${NOW}
 fi
 
-TARGET=${HOME}/.tmux.conf
+
+
+TMUX_VERSION=$(tmux -V | sed -En "s/^tmux ([0-9]+(.[0-9]+)?).*/\1/p")
+
+REPO_TMUX_CONF=${PWD}/tmux.conf
+if [[ $(bc <<< "$TMUX_VERSION >= 2.9") -eq 1 ]];
+then
+REPO_TMUX_CONF=${PWD}/tmux.conf.ge29
+fi
 
 
 
 
-ln -sf  ${TMUX_CONF} ${TARGET}
+
+ln -sf ${REPO_TMUX_CONF} ${TMUX_CONF}
 
