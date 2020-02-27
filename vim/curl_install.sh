@@ -20,11 +20,20 @@ curl -o ${VIMRC} https://raw.githubusercontent.com/beninu/my_conf/master/vim/vim
 mkdir -p ${VIM}/ww
 mkdir -p ${VIM}/autoload
 
-curl -o ${VIM}/autoload/plug.vim https://raw.githubusercontent.com/beninu/my_conf/master/vim/vim/autoload/plug.vim
+
+function fetch_vim_file() {
+  local vim_file=$1
+  curl -o ${VIM}/${vim_file} https://raw.githubusercontent.com/beninu/my_conf/master/vim/vim/${vim_file}
+}
+
+fetch_vim_file autoload/plug.vim
+#curl -o ${VIM}/autoload/plug.vim https://raw.githubusercontent.com/beninu/my_conf/master/vim/vim/autoload/plug.vim
 
 
-curl -o ${VIM}/ww/c.vim https://raw.githubusercontent.com/beninu/my_conf/master/vim/vim/ww/c.vim
-curl -o ${VIM}/ww/py.vim https://raw.githubusercontent.com/beninu/my_conf/master/vim/vim/ww/py.vim
-curl -o ${VIM}/ww/sh.vim https://raw.githubusercontent.com/beninu/my_conf/master/vim/vim/ww/sh.vim
-curl -o ${VIM}/ww/log.vim https://raw.githubusercontent.com/beninu/my_conf/master/vim/vim/ww/log.vim
-curl -o ${VIM}/ww/java.vim https://raw.githubusercontent.com/beninu/my_conf/master/vim/vim/ww/java.vim
+fetch_vim_file ww/meta.vim
+fetch_vim_file ww/c.vim
+fetch_vim_file ww/py.vim
+fetch_vim_file ww/sh.vim
+fetch_vim_file ww/log.vim
+fetch_vim_file ww/java.vim
+
