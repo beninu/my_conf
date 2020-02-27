@@ -13,7 +13,7 @@ autocmd BufNewFile *.c,*.cpp,*.cxx,*.cc,*.C
   \ call setline(5, ' * @file ' . expand("%:t")) |
   \ call setline(6, ' * @brief')  |
   \ call setline(7, ' *') |
-  \ call setline(8, ' * @author wengcijie@kuaishou.com.') |
+  \ call setline(8, ' * @author ' . email)|
   \ call setline(9, ' * @date ' . strftime('%Y-%m-%d')) |
   \ call setline(10, ' */') |
   \ call setline(11, '') |
@@ -29,7 +29,7 @@ autocmd BufNewFile *.h,*.hpp,*.xh,*.hh,*.hxx
   \ call setline(5, ' * @file ' . expand("%:t")) |
   \ call setline(6, ' * @brief')  |
   \ call setline(7, ' *') |
-  \ call setline(8, ' * @author wengcijie@kuaishou.com.') |
+  \ call setline(8, ' * @author ' . email) |
   \ call setline(9, ' * @date ' . strftime('%Y-%m-%d')) |
   \ call setline(10, ' */') |
   \ call setline(11, '') |

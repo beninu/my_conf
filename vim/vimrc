@@ -345,6 +345,7 @@ endif
 " conn_mgr/src/conn_mgr/worker.h:0:  No "#pragma once" header guard found  [build/header_guard] [5]
 " cpplint
 " errorformat = '%A%f:%l:  %m [%t],%-G%.%#'
+source ~/.vim/ww/meta.vim
 source ~/.vim/ww/c.vim
 source ~/.vim/ww/py.vim
 source ~/.vim/ww/sh.vim
