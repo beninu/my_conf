@@ -174,7 +174,7 @@ nmap ga <Plug>(EasyAlign)
 
 call plug#end()
 
-syntax enable
+syntax on
 
 
 

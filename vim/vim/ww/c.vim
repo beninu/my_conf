@@ -51,7 +51,7 @@ autocmd BufRead,BufNewFile *.c,*.h,*.xh,*.hh,*.hxx,*.cpp,*.cxx,*.cc,*.C,*.hpp ab
 "ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=.svn -f $HOME/.tags/ctags /disk2/wengcj/src/c
 autocmd BufRead,BufNewFile *.c,*.h,*.xh,*.hh,*.hxx,*.cpp,*.cxx,*.cc,*.C,*.hpp map <F6> :wa<CR>:make<CR>
 autocmd BufRead,BufNewFile *.c,*.h,*.xh,*.hh,*.hxx,*.cpp,*.cxx,*.cc,*.C,*.hpp set tags=tags,./tags,../tags,../../tags,$HOME/soft/third-party/tags,$HOME/ws/bzl/msg-libs/tags
-autocmd BufNewFile,BufRead *.cpp,*.cc,*.C set syntax=cpp11
+autocmd BufRead,BufNewFile *.c,*.h,*.xh,*.hh,*.hxx,*.cpp,*.cxx,*.cc,*.C,*.hpp syntax on
 
 """ c,c++ end
 
