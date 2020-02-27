@@ -5,6 +5,7 @@
 VIMRC=${HOME}/.vimrc
 VIM=${HOME}/.vim
 NOW=$(date +%Y.%m%d.%H%M)
+
 if [ -f ${VIMRC} ];
 then
   mv  ${VIMRC} ${VIMRC}.${NOW}

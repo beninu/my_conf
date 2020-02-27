@@ -1,0 +1,4 @@
+.gitignore
+vim/vim/plugged
+vim/vim/ww/meta.vim
+
