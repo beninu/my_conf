@@ -44,6 +44,8 @@ set clipboard+=unnamed
 "把.swp文件放到另外的地方
 "set directory=d:\tmp\vim
 "set nobackup
+"
+syntax on
 
 " plugin
 call plug#begin('~/.vim/plugged')
@@ -54,7 +56,6 @@ if executable('ag')
 endif
 
 Plug 'scrooloose/nerdcommenter'
-
 
 Plug 'scrooloose/nerdtree'
 let NERDTreeWinPos = 1
@@ -104,6 +105,7 @@ nnoremap <silent> <leader>1 :NERDTreeToggle<CR>
 
 
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'morhetz/gruvbox'
 
 "Plug 'ervandew/supertab'
 
@@ -174,7 +176,6 @@ nmap ga <Plug>(EasyAlign)
 
 call plug#end()
 
-syntax on
 
 
 
@@ -190,7 +191,8 @@ endif
 " colorscheme solarized
 colorscheme darkblue
 set background=dark
-colorscheme PaperColor
+"colorscheme PaperColor
+colorscheme gruvbox
 
 filetype on
 filetype plugin indent on
