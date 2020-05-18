@@ -1,5 +1,7 @@
 bind R source-file ~/.tmux.conf \; display-message "Config reloaded..."
 
+set -g default-command /bin/zsh
+
 # prefix related
 set -g prefix C-l
 unbind-key C-b
